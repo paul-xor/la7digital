@@ -29,7 +29,7 @@ const SinglePage = props => {
         />
       </div>
       <Container className="main">
-        {/*<About />}
+        <About />
         {/*<Service />}
         {/*<ContactForm /> */}
       </Container>
