@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import "../styles/App.css";
+import NavBar from "./NavBar";
+import SinglePage from "./SinglePage";
 
 const Container = styled.div``;
 
@@ -14,19 +16,19 @@ const Logo = styled.div`
   background-color: rgb(0, 0, 0);
 `;
 
+const Heading = styled.h1`
+  color: white;
+  font-size: 5em;
+  margin: 40px 0px 0px 0px;
+  font-family: "Press Start 2P", cursive;
+`;
+
 export default () => {
   return (
     <Container className="App">
       <div>
-        <Logo>
-          <img
-            style={{
-              maxWidth: "300px"
-            }}
-            src={require("../assets/img/logo-white.png")}
-            alt="la7"
-          />
-        </Logo>
+        <NavBar />
+        <SinglePage />
       </div>
     </Container>
   );
