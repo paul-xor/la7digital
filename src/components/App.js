@@ -20,7 +20,7 @@ const Heading = styled.h1`
   color: white;
   font-size: 5em;
   margin: 40px 0px 0px 0px;
-  font-family: "Press Start 2P", cursive;
+  font-family: "Comfortaa", cursive;
 `;
 
 export default () => {
