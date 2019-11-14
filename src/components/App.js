@@ -13,7 +13,7 @@ const Logo = styled.div`
   width: 100vw;
   height: 100vh;
   flex-direction: column;
-  background-color: rgb(0, 0, 0);
+  background-color: white;
 `;
 
 const Heading = styled.h1`

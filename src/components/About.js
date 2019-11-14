@@ -92,7 +92,7 @@ export default class About extends Component {
       <div id="about">
         {data.map(obj => {
           return (
-            <Box>
+            <Box key={obj.main_header}>
               <Row>
                 <Column>
                   <Header2>{obj.main_header}</Header2>

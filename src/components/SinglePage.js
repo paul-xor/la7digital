@@ -30,7 +30,7 @@ const SinglePage = props => {
       </div>
       <Container className="main">
         <About />
-        {/*<Service />}
+        <Service />
         {/*<ContactForm /> */}
       </Container>
     </NoLimits>
