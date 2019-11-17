@@ -101,7 +101,7 @@ const NavBar = props => {
           <NavItem>
             <Link
               activeClass="active"
-              to="service"
+              to="contact-form"
               spy={true}
               smooth={true}
               offset={-70}

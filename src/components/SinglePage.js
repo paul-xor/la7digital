@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import About from "./About";
 import Service from "./Service";
-import Contact from "./Contact";
+import ContactForm from "./contact-form/contact-form";
 
 const NoLimits = styled.div`
   padding: 0;
@@ -31,7 +31,7 @@ const SinglePage = props => {
       <Container className="main">
         <About />
         <Service />
-        {/*<ContactForm /> */}
+        <ContactForm />}
       </Container>
     </NoLimits>
   );

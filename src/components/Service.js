@@ -40,7 +40,7 @@ const CardBlack = styled.div`
   border-radius: 25px;
   border-left: 5px solid grey;
   background-color: black;
-
+  box-shadow: 0 0 20px 0 rgba(71, 87, 104, 0.7);
   margin: 20px 20px 20px 0px;
   @media (max-width: 700px) {
     width: 300px;
@@ -54,7 +54,7 @@ const CardWhite = styled.div`
 
   border-bottom: 10px solid red;
   background-color: #585b57;
-
+  box-shadow: 0 0 20px 0 rgba(71, 87, 104, 0.7);
   margin: 20px 20px 20px 20px;
   @media (max-width: 700px) {
     width: 300px;
