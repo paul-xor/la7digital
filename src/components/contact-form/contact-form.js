@@ -2,6 +2,17 @@ import React from "react";
 import "./contact-form.css";
 import styled from "styled-components";
 
+import useFormValidation from "./useFormValidation";
+import validateFields from "./validateFields";
+
+const INITIAL_STATE = {
+  name: "",
+  company: "",
+  email: "",
+  phone: "",
+  message: ""
+};
+
 const Header2 = styled.h2`
   font-size: 50px;
   color: red;
@@ -21,13 +32,6 @@ const Header4 = styled.h4`
   line-height: 2rem;
   color: white;
   margin: 20px;
-  padding: 10px;
-`;
-
-const Text = styled.h5`
-  font-size: 20px;
-  color: whitesmoke;
-  margin: 2px 0px 2px;
   padding: 10px;
 `;
 
@@ -62,53 +66,120 @@ const Form = styled.form`
   }
 `;
 
-export default function ContactForm() {
+export default function ContactForm(props) {
+  const {
+    handleSubmit,
+    handleChange,
+    handleBlur,
+    values,
+    errors,
+    isSubmitting
+  } = useFormValidation(INITIAL_STATE, validateFields);
+  // const [name, setName] = React.useState("");
+  // const [company, setCompany] = React.useState("");
+  // const [email, setEmail] = React.useState("");
+  // const [phone, setPhone] = React.useState("");
+  // const [message, setMessage] = React.useState("");
+
   return (
     <Box>
       <div className="contact-form">
         <Header2 id="contact">Contact Us</Header2>
 
-        <div class="wrapper animated bounceInLeft">
-          <div class="company-info">
+        <div className="wrapper animated bounceInLeft">
+          <div className="company-info">
             <Header3>LA7 DIGITAL</Header3>
             <Header4>
               <ul>
                 <li>
-                  <i class="fa fa-phone"></i> (204) 5577207
+                  <i className="fa fa-phone"></i> (204) 5577207
                 </li>
                 <li>
-                  <i class="fa fa-envelope"></i> welcome@la7digital.com
+                  <i className="fa fa-envelope"></i> welcome@la7digital.com
                 </li>
               </ul>
             </Header4>
           </div>
 
-          <div class="contact">
+          <div className="contact">
             <Header3>Email Us</Header3>
 
-            <Form method="POST" action="email">
+            <Form onSubmit={handleSubmit}>
               <p>
                 <label>Name</label>
-                <input type="text" name="name" id="name" />
+                <input
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.name && "error-input"}
+                  name="name"
+                  value={values.name}
+                  autoComplete="off"
+                />
+                {errors.name && <p className="error-text">{errors.name}</p>}
               </p>
               <p>
                 <label>Company</label>
-                <input type="text" name="company" id="company" />
+                <input
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.company && "error-input"}
+                  name="company"
+                  value={values.company}
+                  autoComplete="off"
+                />
+                {errors.company && (
+                  <p className="error-text">{errors.company}</p>
+                )}
               </p>
               <p>
                 <label>Email Address</label>
-                <input type="email" name="email" id="email" />
+                <input
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.email && "error-input"}
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={values.email}
+                  autoComplete="off"
+                />
+                {errors.email && <p className="error-text">{errors.email}</p>}
               </p>
               <p>
                 <label>Phone Number</label>
-                <input type="text" name="phone" id="phone" />
+                <input
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.phone && "error-input"}
+                  type="phone"
+                  name="phone"
+                  id="phone"
+                  value={values.phone}
+                  autoComplete="off"
+                />
+                {errors.phone && <p className="error-text">{errors.phone}</p>}
               </p>
-              <p class="full">
+              <p className="full">
                 <label>Message</label>
-                <textarea name="message" id="message" rows="5"></textarea>
+                <textarea
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.message && "error-input"}
+                  type="message"
+                  name="message"
+                  id="message"
+                  value={values.message}
+                  autoComplete="off"
+                  rows="5"
+                />
+                {errors.message && (
+                  <p className="error-text">{errors.massage}</p>
+                )}
               </p>
-              <p class="full">
-                <Button type="submit">Submit</Button>
+              <p className="full">
+                <Button disabled={isSubmitting} type="submit">
+                  Submit
+                </Button>
               </p>
             </Form>
           </div>

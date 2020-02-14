@@ -31,7 +31,7 @@ const SinglePage = props => {
       <Container className="main">
         <About />
         <Service />
-        <ContactForm />}
+        <ContactForm />
       </Container>
     </NoLimits>
   );
