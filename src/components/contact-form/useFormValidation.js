@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 function useFormValidation(initialState, validate) {
   const [values, setValues] = React.useState(initialState);
@@ -36,13 +37,30 @@ function useFormValidation(initialState, validate) {
     setErrors(validationErrors);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const validationErrors = validate(values);
     setErrors(validationErrors);
     setSubmitting(true);
     //TODO: it should be here something like"
-    const { name, company, email, phone, message } = this.state;
+    //const { name, company, email, phone, message } = this.state;
+
+    const data = {
+      // name: values.name,
+      // company: values.company,
+      // email: values.email,
+      // phone: values.phone,
+      // message: values.message
+      ...values
+    };
+
+    // console.log(form.data);
+    const form = await axios.post(
+      "https://us-central1-cloudfun-send-emails.cloudfunctions.net/sendMail?",
+      data
+    );
+
+    console.log(form.data);
   }
 
   return {
