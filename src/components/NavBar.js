@@ -69,7 +69,7 @@ const NavBar = props => {
     <Nav id="navbar">
       <Container>
         <Logo
-          src={require("../assets/img/logo-white.png")}
+          src={require("../assets/img/logo_la7.svg")}
           alt="LA7 Logo"
           onClick={scrollToTop}
         />
