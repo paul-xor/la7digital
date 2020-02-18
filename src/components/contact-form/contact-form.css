@@ -91,6 +91,15 @@ ul {
   font-size: 1.2rem;
 }
 
+.alert {
+  text-align: center;
+  padding: 10px;
+  background: #79c879;
+  color: #fff;
+  margin-bottom: 10px;
+  display: none;
+}
+
 /* LARGE SCREENS */
 @media (min-width: 700px) {
   .wrapper {

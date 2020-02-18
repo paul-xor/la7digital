@@ -83,7 +83,7 @@ export default function ContactForm(props) {
 
   return (
     <Box>
-      <div className="contact-form">
+      <div className="contact-form" id="contact-form">
         <Header2 id="contact">Contact Us</Header2>
 
         <div className="wrapper animated bounceInLeft">
@@ -103,7 +103,7 @@ export default function ContactForm(props) {
 
           <div className="contact">
             <Header3>Email Us</Header3>
-
+            <div className="alert">Your message has been sent.</div>
             <Form onSubmit={handleSubmit}>
               <p>
                 <label>Name</label>

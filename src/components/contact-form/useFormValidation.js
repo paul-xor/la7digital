@@ -45,22 +45,23 @@ function useFormValidation(initialState, validate) {
     //TODO: it should be here something like"
     //const { name, company, email, phone, message } = this.state;
 
-    const data = {
-      // name: values.name,
-      // company: values.company,
-      // email: values.email,
-      // phone: values.phone,
-      // message: values.message
-      ...values
-    };
-
-    // console.log(form.data);
+    const data = { ...values };
     const form = await axios.post(
       "https://us-central1-cloudfun-send-emails.cloudfunctions.net/sendMail?",
       data
     );
 
     console.log(form.data);
+    if (form.data === "message sent") {
+      document.querySelector(".alert").style.display = "block";
+
+      setTimeout(function() {
+        document.querySelector(".alert").style.display = "none";
+      }, 4000);
+    }
+    //Clear form
+    // document.getElementById("contact-form").reset();
+    //this.setState(this.baseState);
   }
 
   return {
