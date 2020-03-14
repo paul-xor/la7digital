@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
+    "handlebars": "^4.7.3",
     "minimist": "^1.2.5",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
