@@ -112,6 +112,7 @@ export default function ContactForm(props) {
                   onBlur={handleBlur}
                   className={errors.name && "error-input"}
                   name="name"
+                  id="name"
                   value={values.name}
                   autoComplete="off"
                 />
@@ -124,6 +125,7 @@ export default function ContactForm(props) {
                   onBlur={handleBlur}
                   className={errors.company && "error-input"}
                   name="company"
+                  id="company"
                   value={values.company}
                   autoComplete="off"
                 />

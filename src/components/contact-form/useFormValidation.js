@@ -57,11 +57,21 @@ function useFormValidation(initialState, validate) {
 
       setTimeout(function() {
         document.querySelector(".alert").style.display = "none";
-      }, 4000);
+      }, 8000);
+      //Clear form fields
+      const fields = ["name", "phone", "company", "email", "message"];
+      clearForm(fields);
     }
-    //Clear form
-    // document.getElementById("contact-form").reset();
-    //this.setState(this.baseState);
+  }
+  function clearForm(fields) {
+    fields.forEach(field => {
+      document.getElementById(field).value = null;
+    });
+  }
+
+  function showMessageSent() {
+    let contact = document.querySelector(".contact");
+    contact.innerHTML = "<h1>Thank you for your message.</h1>";
   }
 
   return {
