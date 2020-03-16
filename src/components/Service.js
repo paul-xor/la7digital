@@ -36,7 +36,7 @@ const ImgKey = styled.img`
 const CardBlack = styled.div`
   display: flex;
   flex-direction: column;
-  height: 270px;
+  flex-wrap: wrap;
   border-radius: 25px;
   border-left: 5px solid grey;
   background-color: black;
@@ -50,14 +50,14 @@ const CardBlack = styled.div`
 const CardWhite = styled.div`
   display: flex;
   flex-direction: column;
-  height: 270px;
+  flex-wrap: wrap;
 
   border-bottom: 10px solid red;
   background-color: #585b57;
   box-shadow: 0 0 20px 0 rgba(71, 87, 104, 0.7);
   margin: 20px 20px 20px 20px;
-  @media (max-width: 700px) {
-    width: 300px;
+  @media (max-width: 940px) {
+    height: 350px;
   }
 `;
 
