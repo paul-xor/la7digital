@@ -5,28 +5,27 @@ import Background from "../assets/img/image_main_bg.jpg";
 const masthead = styled.div``;
 
 const Header = styled.h2`
-  font-size: 70px;
+  font-size: 5rem;
   color: grey;
-  margin: 20px;
+  margin: 10% 30% 0% 10%;
   padding: 10px;
 `;
 
 const Text = styled.h5`
-  font-size: 20px;
+  font-size: 2rem;
   color: whitesmoke;
-  margin: 20px;
-  padding: 10px;
+  margin: 0% 30% 10% 10%;
+  padding: 20px;
 `;
 
 const Box = styled.div`
   font-family: "Comfortaa", cursive;
-
-  margin: 100px 10px 100px;
-  padding: 100px 0px 100px;
+  /* margin: 100px 30px 100px; */
+  padding: 500px 0px 100px;
 `;
 
 const ImgBackground = styled.div`
-  position: relative;
+  /* position: relative; */
   width: 100%;
   height: 100vh;
 
@@ -49,11 +48,13 @@ const ImgBackground = styled.div`
 export default function Masthead() {
   return (
     <ImgBackground>
-      <Header>Build Your Digital Identity</Header>
-      <Text>
-        Your digital identity is not a logo, your message, your social media
-        page or your website. It’s all together!
-      </Text>
+      <Box>
+        <Header>Build Your Digital Identity</Header>
+        <Text>
+          Your digital identity is not a logo, your message, your social media
+          page or your website. It’s all together!
+        </Text>
+      </Box>
     </ImgBackground>
   );
 }
