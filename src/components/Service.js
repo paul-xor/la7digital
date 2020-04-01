@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Tabletop from "tabletop";
 
+const Box = styled.div`
+  font-family: "Comfortaa", cursive;
+
+  margin: 100px 10px 100px;
+  padding: 100px 25px 100px;
+
+  background-color: rgb(45, 45, 50);
+`;
+
 const Header2 = styled.h2`
   font-size: 50px;
   color: red;
@@ -23,82 +32,45 @@ const Text = styled.h5`
   padding: 10px;
 `;
 
-const ImgKey = styled.img`
-  height: 300px;
-  width: 400px;
-  margin: 20px;
-  border-radius: 10%;
-  &:hover {
-    cursor: pointer;
+const CardWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 `;
 
 const CardBlack = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex: 1;
   border-radius: 25px;
   border-left: 5px solid grey;
   background-color: black;
   box-shadow: 0 0 20px 0 rgba(71, 87, 104, 0.7);
   margin: 20px 20px 20px 0px;
-  @media (max-width: 700px) {
-    width: 300px;
-  }
+`;
+
+const CardEmpty = styled.div`
+  flex: 1;
 `;
 
 const CardWhite = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-
+  /* flex: 1; */
   border-bottom: 10px solid red;
   background-color: #585b57;
   box-shadow: 0 0 20px 0 rgba(71, 87, 104, 0.7);
   margin: 20px 20px 20px 20px;
-  @media (max-width: 940px) {
-    height: 350px;
+  &:hover {
+    transform: scale(1.1);
   }
 `;
 
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 50%;
-  width: 50%;
-  margin: 20px 20px 20px 20px;
-
-  @media (max-width: 976px) {
-    width: 95%;
-  }
-`;
-
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-
-  @media (max-width: 976px) {
-    flex-direction: column;
-  }
-`;
-
-const Box = styled.div`
-  font-family: "Comfortaa", cursive;
-
-  margin: 100px 10px 100px;
-  padding: 100px 0px 100px;
-
-  background-color: rgb(45, 45, 45);
-`;
-export default class Service extends Component {
+class Service1 extends Component {
   constructor(props) {
     super();
-
     this.state = {
       data: []
     };
   }
-
   componentDidMount() {
     Tabletop.init({
       key: process.env.REACT_APP_SERVICE_KEY,
@@ -111,25 +83,21 @@ export default class Service extends Component {
   render() {
     const { data } = this.state;
     return (
-      <div id="service">
+      <div id="new_service">
         {data.map(obj => {
           return (
             <Box key={obj.service_header}>
-              <Row>
-                <Header2>{obj.service_header}</Header2>
-              </Row>
-              <Row>
-                <Column>
-                  <CardBlack>
-                    <Header3>{obj.service_header}</Header3>
-                    <Text>{obj.black_box_text}</Text>
-                  </CardBlack>
-                </Column>
-                <Column>
+              <Header2>{obj.service_header}</Header2>
+              <CardWrapper>
+                <CardBlack>
+                  <Header3>{obj.service_header}</Header3>
+                  <Text>{obj.black_box_text}</Text>
+                </CardBlack>
+                <CardEmpty>
                   <Text>{obj.normal_text}</Text>
-                </Column>
-              </Row>
-              <Row>
+                </CardEmpty>
+              </CardWrapper>
+              <CardWrapper>
                 <CardWhite>
                   <Text style={{ color: "#whitesmoke" }}>
                     {obj.box_1_header}
@@ -148,7 +116,7 @@ export default class Service extends Component {
                   </Text>
                   <Text style={{ color: "#E8E0D9" }}>{obj.box_3_text}</Text>
                 </CardWhite>
-              </Row>
+              </CardWrapper>
             </Box>
           );
         })}
@@ -156,3 +124,5 @@ export default class Service extends Component {
     );
   }
 }
+
+export default Service1;
