@@ -35,6 +35,7 @@ const Text = styled.h5`
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: row;
+
   @media (max-width: 768px) {
     flex-direction: column;
   }

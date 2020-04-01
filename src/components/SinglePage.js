@@ -4,6 +4,7 @@ import About from "./About";
 import Service from "./Service";
 import ContactForm from "./contact-form/contact-form";
 import Masthead from "./Masthead";
+import Footer from "./Footer";
 
 const NoLimits = styled.div`
   padding: 0;
@@ -36,6 +37,7 @@ const SinglePage = props => {
         <About />
         <Service />
         <ContactForm />
+        <Footer />
       </Container>
     </NoLimits>
   );
