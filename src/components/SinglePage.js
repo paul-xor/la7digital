@@ -16,18 +16,6 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
 `;
-const Header = styled.h2`
-  font-size: 70px;
-  color: grey;
-  margin: 20px;
-  padding: 10px;
-`;
-const Text = styled.h5`
-  font-size: 20px;
-  color: whitesmoke;
-  margin: 20px;
-  padding: 10px;
-`;
 
 const SinglePage = props => {
   return (

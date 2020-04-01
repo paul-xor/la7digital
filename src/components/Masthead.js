@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Background from "../assets/img/image_main_bg.jpg";
 
-const masthead = styled.div``;
-
 const Header = styled.h2`
   font-size: 5rem;
   color: grey;
@@ -12,7 +10,7 @@ const Header = styled.h2`
 `;
 
 const Text = styled.h5`
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: whitesmoke;
   margin: 0% 30% 10% 10%;
   padding: 20px;
@@ -21,7 +19,7 @@ const Text = styled.h5`
 const Box = styled.div`
   font-family: "Comfortaa", cursive;
   /* margin: 100px 30px 100px; */
-  padding: 500px 0px 100px;
+  padding: 250px 0px 100px;
 `;
 
 const ImgBackground = styled.div`

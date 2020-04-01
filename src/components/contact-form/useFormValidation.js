@@ -10,14 +10,14 @@ function useFormValidation(initialState, validate) {
     if (isSubmitting) {
       const noErrors = Object.keys(errors).length === 0;
       if (noErrors) {
-        console.log(
-          "my form consists of:",
-          values.name,
-          values.company,
-          values.email,
-          values.phone,
-          values.message
-        );
+        // console.log(
+        //   "my form consists of:",
+        //   values.name,
+        //   values.company,
+        //   values.email,
+        //   values.phone,
+        //   values.message
+        // );
         setSubmitting(false);
       } else {
         setSubmitting(false);
@@ -51,7 +51,7 @@ function useFormValidation(initialState, validate) {
       data
     );
 
-    console.log(form.data);
+    //console.log(form.data);
     if (form.data === "message sent") {
       document.querySelector(".alert").style.display = "block";
 
@@ -69,10 +69,10 @@ function useFormValidation(initialState, validate) {
     });
   }
 
-  function showMessageSent() {
-    let contact = document.querySelector(".contact");
-    contact.innerHTML = "<h1>Thank you for your message.</h1>";
-  }
+  // function showMessageSent() {
+  //   let contact = document.querySelector(".contact");
+  //   contact.innerHTML = "<h1>Thank you for your message.</h1>";
+  // }
 
   return {
     handleSubmit,
