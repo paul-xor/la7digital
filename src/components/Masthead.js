@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Background from "../assets/img/image_main_bg.jpg";
+import Background from "../assets/img/image_main_bg_1000x723px.jpg";
 
 const Header = styled.h2`
   font-size: 5rem;
@@ -19,7 +19,7 @@ const Text = styled.h5`
 const Box = styled.div`
   font-family: "Comfortaa", cursive;
   /* margin: 100px 30px 100px; */
-  padding: 250px 0px 100px;
+  padding: 180px 0px 100px;
 `;
 
 const ImgBackground = styled.div`
@@ -32,15 +32,14 @@ const ImgBackground = styled.div`
       left top,
       left bottom,
       from(rgba(22, 22, 22, 0.3)),
-      color-stop(75%, rgba(22, 22, 22, 0.7)),
+      color-stop(95%, rgba(22, 22, 22, 0.7)),
       to(#161616)
     ),
     url(${Background});
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-size: cover;
-  z-index: 1;
+  background-size: 100% 82%;
 `;
 
 export default function Masthead() {
