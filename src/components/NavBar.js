@@ -11,8 +11,8 @@ const Container = styled.div`
 `;
 
 const Logo = styled.img`
-  height: 90px;
-  width: 110px;
+  height: 65px;
+  width: 85px;
   &:hover {
     cursor: pointer;
   }
@@ -37,13 +37,13 @@ const NavItem = styled.div`
   }
 `;
 
-const NavBar = props => {
+const NavBar = (props) => {
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
 
   const offSet = () => {
-    window.onscroll = function() {
+    window.onscroll = function () {
       myFunction();
     };
 

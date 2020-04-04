@@ -69,23 +69,23 @@ class Service1 extends Component {
   constructor(props) {
     super();
     this.state = {
-      data: []
+      data: [],
     };
   }
   componentDidMount() {
     Tabletop.init({
       key: process.env.REACT_APP_SERVICE_KEY,
-      callback: googleData => {
+      callback: (googleData) => {
         this.setState({ data: googleData });
       },
-      simpleSheet: true
+      simpleSheet: true,
     });
   }
   render() {
     const { data } = this.state;
     return (
-      <div id="new_service">
-        {data.map(obj => {
+      <div id="service">
+        {data.map((obj) => {
           return (
             <Box key={obj.service_header}>
               <Header2>{obj.service_header}</Header2>
